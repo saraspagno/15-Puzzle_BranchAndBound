@@ -1,7 +1,7 @@
 from heapq import heappush, heappop
 
 
-class PriorityQueue:
+class DataStructure:
     def __init__(self):
         self.heap = []
 
@@ -11,6 +11,5 @@ class PriorityQueue:
     def pop(self):
         return heappop(self.heap)
 
-    # todo: can I do this?
     def empty(self):
         return not self.heap

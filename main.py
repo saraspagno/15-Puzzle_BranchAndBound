@@ -1,5 +1,5 @@
 import copy
-from PriorityQueue import PriorityQueue
+from DataStructure import DataStructure
 from StackNode import Node
 # from QueueNode import Node
 
@@ -52,7 +52,7 @@ def print_path(root):
 
 def branch_and_bound(initial_matrix, initial_block_pos):
     # priority queue to store the live nodes
-    liveNodes = PriorityQueue()
+    liveNodes = DataStructure()
     boards_seen.append(initial_matrix)
 
     # create root node
