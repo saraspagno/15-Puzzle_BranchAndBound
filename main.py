@@ -1,12 +1,14 @@
+import ast
 import copy
+import time
+import matplotlib.pyplot as plt
+import statistics
+
 from DataStructure import DataStructure
-from StackNode import Node
-# from QueueNode import Node
+from QueueNode import Node
 
 N = 4
 SOLUTION = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 0]]
-
-boards_seen = []
 
 # top, right, bottom, left
 row = [-1, 0, 1, 0]
@@ -20,6 +22,13 @@ def calculate_cost(matrix):
             if matrix[i][j] and matrix[i][j] != SOLUTION[i][j]:
                 count += 1
     return count
+
+
+def calculate_block_pos(mat):
+    for i in range(N):
+        for y in range(N):
+            if mat[i][y] == 0:
+                return [i, y]
 
 
 def is_legal(block_pos):
@@ -51,6 +60,8 @@ def print_path(root):
 
 
 def branch_and_bound(initial_matrix, initial_block_pos):
+    boards_seen = []
+    start = time.time()
     # priority queue to store the live nodes
     liveNodes = DataStructure()
     boards_seen.append(initial_matrix)
@@ -67,9 +78,10 @@ def branch_and_bound(initial_matrix, initial_block_pos):
 
         # if this node is the answer
         if min_node.cost == 0:
+            stop = time.time()
             print("\n\n***** DONE, PRINTING PATH *****\n")
-            print_path(min_node)
-            return
+            # print_path(min_node)
+            return min_node.level, stop - start, len(boards_seen)
 
         # create the new children
         for i in range(4):
@@ -83,8 +95,32 @@ def branch_and_bound(initial_matrix, initial_block_pos):
                     liveNodes.push(child)
 
 
-if __name__ == "__main__":
-    initial_main = [[2, 6, 4, 12], [1, 7, 9, 8], [15, 13, 14, 3], [5, 10, 11, 0]]
-    block_pos_main = [3, 3]
-    branch_and_bound(initial_main, block_pos_main)
+def draw_graph(numbers, ylabel, title):
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    mean = statistics.mean(numbers)
+    ax.axhline(mean, color="gray")
+    ax.text(1.02, mean, str(mean), va='center', ha="left", bbox=dict(facecolor="w", alpha=0.5),
+            transform=ax.get_yaxis_transform())
+    plt.axhline(y=mean, color='r', linestyle='-')
+    plt.plot(numbers, color='b')
+    plt.ylabel(ylabel)
+    plt.xlabel('Tiles Configurations')
+    plt.title(title)
+    plt.show()
 
+
+if __name__ == "__main__":
+    levels, running_times, tree_sizes = [], [], []
+    file = open('permutatations.txt', 'r')
+    for line in file:
+        initial_main = ast.literal_eval(line)
+        block_pos_main = calculate_block_pos(initial_main)
+        l, r, t = branch_and_bound(initial_main, block_pos_main)
+        levels.append(l)
+        running_times.append(r)
+        tree_sizes.append(t)
+
+    draw_graph(levels, 'Tree Depth', 'DFS - Tree Depth')
+    draw_graph(running_times, 'Running Time', 'DFS - Running Time')
+    draw_graph(tree_sizes, 'N. Of States', 'DFS - N. Of States')
