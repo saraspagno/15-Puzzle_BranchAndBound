@@ -2,7 +2,11 @@ import copy
 from random import randrange
 
 N = 4
-moves = 30
+
+# must be a number between 1 & 80
+difficulty = 30
+
+number_of_configurations = 100
 # top, right, bottom, left
 row = [-1, 0, 1, 0]
 col = [0, 1, 0, -1]
@@ -26,7 +30,7 @@ def shuffle(initial_tiles):
     old_pos = [3, 3]
     old_mat = copy.deepcopy(initial_tiles)
 
-    for i in range(moves):
+    for i in range(difficulty):
         index = randrange(4)
         new_pos = [old_pos[0] + row[index], old_pos[1] + col[index]]
         if is_legal(new_pos):
@@ -41,6 +45,6 @@ if __name__ == "__main__":
     f = open('permutatations.txt', 'w')
     initial_main = [[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12], [13, 14, 15, 0]]
     block_pos_main = [3, 3]
-    for i in range(100):
+    for i in range(number_of_configurations):
         new_mat = shuffle(initial_main)
         print(new_mat, file=f)

@@ -79,7 +79,7 @@ def branch_and_bound(initial_matrix, initial_block_pos):
         # if this node is the answer
         if min_node.cost == 0:
             stop = time.time()
-            print("\n\n***** DONE, PRINTING PATH *****\n")
+            print("\n\n***** SOLUTION FOUND *****\n")
             # print_path(min_node)
             return min_node.level, stop - start, len(boards_seen)
 
@@ -95,7 +95,7 @@ def branch_and_bound(initial_matrix, initial_block_pos):
                     liveNodes.push(child)
 
 
-def draw_graph(numbers, ylabel, title):
+def draw_graph(numbers, ylabel):
     fig = plt.figure()
     ax = fig.add_subplot(111)
     mean = statistics.mean(numbers)
@@ -106,7 +106,6 @@ def draw_graph(numbers, ylabel, title):
     plt.plot(numbers, color='b')
     plt.ylabel(ylabel)
     plt.xlabel('Tiles Configurations')
-    plt.title(title)
     plt.show()
 
 
@@ -121,6 +120,6 @@ if __name__ == "__main__":
         running_times.append(r)
         tree_sizes.append(t)
 
-    draw_graph(levels, 'Tree Depth', 'DFS - Tree Depth')
-    draw_graph(running_times, 'Running Time', 'DFS - Running Time')
-    draw_graph(tree_sizes, 'N. Of States', 'DFS - N. Of States')
+    draw_graph(levels, 'Tree Depth')
+    draw_graph(running_times, 'Running Time')
+    draw_graph(tree_sizes, 'N. Of States')

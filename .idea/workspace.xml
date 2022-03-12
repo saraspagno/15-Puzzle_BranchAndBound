@@ -19,13 +19,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9af293bb-23dd-494f-b5d2-4f12f0c939d7" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PermutationsMaker.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/PermutationsTest.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/permutatations.txt" afterDir="false" />
+    <list default="true" id="9af293bb-23dd-494f-b5d2-4f12f0c939d7" name="Default Changelist" comment="changes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PermutationsMaker.py" beforeDir="false" afterPath="$PROJECT_DIR$/PermutationsMaker.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -143,7 +139,14 @@
       <option name="project" value="LOCAL" />
       <updated>1646953697787</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="changes">
+      <created>1647010613855</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1647010613855</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -156,10 +159,12 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="refactor" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor" />
+    <MESSAGE value="changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="changes" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="92" width="1071" height="724" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1646987269223">
@@ -219,14 +224,19 @@
     </state>
     <state width="1419" height="142" key="GridCell.Tab.1.right/0.23.1440.812@0.23.1440.812" timestamp="1647005857385" />
     <state width="1419" height="242" key="GridCell.Tab.1.right/0.23.1440.814@0.23.1440.814" timestamp="1646935127896" />
-    <state x="320" y="168" key="Vcs.Push.Dialog.v2" timestamp="1646953702935">
-      <screen x="0" y="23" width="1440" height="814" />
+    <state x="320" y="168" key="Vcs.Push.Dialog.v2" timestamp="1647010618654">
+      <screen x="0" y="23" width="1440" height="812" />
     </state>
+    <state x="320" y="168" key="Vcs.Push.Dialog.v2/0.23.1440.812@0.23.1440.812" timestamp="1647010618654" />
     <state x="320" y="168" key="Vcs.Push.Dialog.v2/0.23.1440.814@0.23.1440.814" timestamp="1646953702935" />
     <state x="100" y="123" width="1240" height="611" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1646953747379">
       <screen x="0" y="23" width="1440" height="814" />
     </state>
     <state x="100" y="123" width="1240" height="611" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.23.1440.814@0.23.1440.814" timestamp="1646953747379" />
+    <state x="521" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1647087811229">
+      <screen x="0" y="23" width="1440" height="814" />
+    </state>
+    <state x="521" y="350" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1440.814@0.23.1440.814" timestamp="1647087811229" />
     <state x="481" y="121" key="svn.repositoryBrowser" timestamp="1646953069553">
       <screen x="0" y="23" width="1440" height="814" />
     </state>
