@@ -1,6 +1,6 @@
 # 15-Puzzle Optimization Using Branch & Bound
 
-You can find all information about this project at:
+You can find all information about this project at: [report](https://github.com/saraspagno/15-Puzzle_BranchAndBound/blob/main/Report.pdf)
 
 This code will take as input a list of initial tiles configurations,and solve them using the Branch & Bound method, either with BFS or DFS. 
 For each solution it will save: 
